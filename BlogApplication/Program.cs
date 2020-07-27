@@ -31,7 +31,7 @@ namespace BlogApplication
                 try
                 {
                     var context = services.GetRequiredService<BlogContext>();
-                    context.Database.EnsureCreated();
+                    DbSeeder.Init(context);
                 }
                 catch (Exception ex)
                 {
