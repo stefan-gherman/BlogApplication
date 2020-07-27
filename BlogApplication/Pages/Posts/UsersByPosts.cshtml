@@ -1,0 +1,43 @@
+﻿@page
+@model BlogApplication.Pages.Posts.UsersByPostsModel
+@{
+    ViewData["Title"] = "UsersByPosts";
+}
+
+<h1>User Ranking By Number Of Posts</h1>
+
+@if (Model.UserPosts.Count == 0)
+{
+    <p>Nothing Here!</p>
+} 
+else {
+<table>
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Number Of Posts</th>
+        </tr>
+    </thead>
+        <tbody>
+            @foreach (var item in Model.UserPosts)
+            {
+                var fullname = item.CombineNames().ToString();
+                var numPosts = item.Posts.Count.ToString();
+                <tr>
+                    <td>
+                        @fullname
+                    </td>
+                    <td>
+                        @numPosts
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+</table>
+} 
+
+
+
+<a asp-page="/Posts/Index">Go Back</a>
+

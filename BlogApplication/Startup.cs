@@ -27,6 +27,7 @@ namespace BlogApplication
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            
 
             //services.AddDbContext<BlogContext>(options =>
             //        options.UseSqlServer(Configuration.GetConnectionString("BlogContext")));
