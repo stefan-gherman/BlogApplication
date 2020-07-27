@@ -30,6 +30,7 @@ namespace BlogApplication.Data
             {
                 new Post {Content = "Learn how to change a tire in just 45 seconds!", UserId = 1},
                 new Post {Content = "Hunting foxes has never been easier", UserId = 1},
+                new Post {Content = "3 times", UserId = 1},
                 new Post {Content = "Clubbing is for losers", UserId = 2},
                 new Post {Content = "Vamos todos a la plaza!", UserId = 3},
             };
