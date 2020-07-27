@@ -21,9 +21,9 @@
                 @Html.DisplayFor(modelItem => item.Content)
             </h5>
             @{ var fullname = item.User.CombineNames().ToString(); }
-            <h6 class="card-subtitle mb-2 text-muted">
-                @fullname
-            </h6>
+        <h6 class="card-subtitle mb-2 text-muted">
+            @fullname at  @Html.DisplayFor(modelItem => item.CreationDate)
+        </h6>
         </div>
     </div>
 </div>
