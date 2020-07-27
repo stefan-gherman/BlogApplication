@@ -11,5 +11,10 @@ namespace BlogApplication.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public ICollection<Post> Posts { get; set; }
+
+        public string CombineNames()
+        {
+            return FirstName + " " + LastName;
+        }
     }
 }
