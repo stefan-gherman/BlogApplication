@@ -5,29 +5,37 @@
     ViewData["Title"] = "Index";
 }
 
+@section Scripts{
+    <script src="js/blogPage.js" type="text/javascript"></script>
+}
+
 <h1>Posts</h1>
 
 @if (Model.Post.Count == 0)
 {
     <p>Nothing Here!</p>
 }
-
-@foreach (var item in Model.Post) { 
+else
+{
+    <button type="button" class="btn btn-info" id="sortByDate">Sort by Date</button>
+}
+@foreach (var item in Model.Post)
+{
     <div class="row justify-content-center">
-<div class="col-md justify-content-center">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">
-                @Html.DisplayFor(modelItem => item.Content)
-            </h5>
-            @{ var fullname = item.User.CombineNames().ToString(); }
-        <h6 class="card-subtitle mb-2 text-muted">
-            @fullname at  @Html.DisplayFor(modelItem => item.CreationDate)
-        </h6>
+        <div class="col-md justify-content-center">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        @Html.DisplayFor(modelItem => item.Content)
+                    </h5>
+                    @{ var fullname = item.User.CombineNames().ToString(); }
+                    <h6 class="card-subtitle mb-2 text-muted">
+                        @fullname at  @Html.DisplayFor(modelItem => item.CreationDate)
+                    </h6>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-</div> 
 }
 <a asp-page="/Posts/UsersByPosts">See User Leaderboard</a>
-<
+
