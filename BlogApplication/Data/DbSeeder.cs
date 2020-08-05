@@ -10,6 +10,7 @@ namespace BlogApplication.Data
     {
         public static void Init(BlogContext context)
         {
+            context.Database.EnsureCreated();
             if (context.Post.Any())
             {
                 return;

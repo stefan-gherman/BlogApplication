@@ -27,13 +27,13 @@ namespace BlogApplication
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            
 
-            //services.AddDbContext<BlogContext>(options =>
-            //        options.UseSqlServer(Configuration.GetConnectionString("BlogContext")));
 
             services.AddDbContext<BlogContext>(options =>
-                options.UseInMemoryDatabase(databaseName: "BlogDB"));
+                    options.UseSqlServer(Configuration.GetConnectionString("BlogDb")));
+
+            //services.AddDbContext<BlogContext>(options =>
+            //    options.UseInMemoryDatabase(databaseName: "BlogDB"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
