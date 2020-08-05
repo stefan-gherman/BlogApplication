@@ -20,11 +20,23 @@ namespace BlogApplication.Pages.Posts
         }
 
         public IList<Post> Post { get;set; }
+        public string Message { get; set; } = "Get Message";
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(string sortOrder)
         {
-            Post = await _context.Post
-                .Include(p => p.User).ToListAsync();
+            if(sortOrder == null)
+            {
+                Post = await _context.Post
+               .Include(p => p.User).ToListAsync();
+            } else
+            {
+                Message = "Sorted";
+                Post = await _context.Post.OrderByDescending(p => p.CreationDate).Include(p => p.User).ToListAsync();
+            }
+            
+           
         }
+
+
     }
 }

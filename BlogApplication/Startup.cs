@@ -57,6 +57,7 @@ namespace BlogApplication
 
             app.UseAuthorization();
 
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();

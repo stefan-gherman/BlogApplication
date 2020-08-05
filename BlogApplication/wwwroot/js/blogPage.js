@@ -6,6 +6,6 @@ $(document).ready(() => {
     const $sortButton = $("#sortByDate");
     $sortButton.css("margin-bottom", "5%");
     $sortButton.on("click", () => {
-       
+        alert("Button Clicked");
     });
 });
