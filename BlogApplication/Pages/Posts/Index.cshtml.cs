@@ -27,11 +27,11 @@ namespace BlogApplication.Pages.Posts
             if(sortOrder == null)
             {
                 Post = await _context.Post
-               .Include(p => p.User).ToListAsync();
+               .Include(p => p.User).Include(p => p.Blog).ToListAsync();
             } else
             {
                 Message = "Sorted";
-                Post = await _context.Post.OrderByDescending(p => p.CreationDate).Include(p => p.User).ToListAsync();
+                Post = await _context.Post.OrderByDescending(p => p.CreationDate).Include(p => p.User).Include(p => p.Blog).ToListAsync();
             }
             
            

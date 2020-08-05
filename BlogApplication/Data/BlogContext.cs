@@ -17,12 +17,14 @@ namespace BlogApplication.Data
 
         public DbSet<Post> Post { get; set; }
         public DbSet<User> User { get; set; }
+        public DbSet<Blog> Blog { get; set; }
 
 
         protected override void OnModelCreating (ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Post>().ToTable("Post");
             modelBuilder.Entity<User>().ToTable("User");
+            modelBuilder.Entity<Blog>().ToTable("Blog");
         }
     }
 }
